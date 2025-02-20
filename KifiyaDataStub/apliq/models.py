@@ -3,6 +3,7 @@ from django.db import models
 from django.db.models import JSONField
 
 class FinancialMetrics(models.Model):
+    liquidity_provider_id = models.CharField(max_length=20, null=True, blank=True)
     total_funds = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     npl = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)  # Non-Performing Loans
     number_of_customers = models.IntegerField(null=True, blank=True)

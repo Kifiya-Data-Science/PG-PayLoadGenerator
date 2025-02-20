@@ -1,0 +1,14 @@
+Django>=4.2,<5.0
+djangorestframework>=3.12,<4.0
+psycopg2>=2.9  # If you're using PostgreSQL as the database
+mysqlclient>=2.1  # If you're using MySQL
+gunicorn>=20.1,<21  # WSGI HTTP Server for deployment
+pillow>=8.0,<10.0  # For handling image uploads (if you use images in your project)
+django-cors-headers>=3.7  # If you need to handle CORS
+drf-yasg>=1.20  # For Swagger/OpenAPI documentation support
+django-environ>=0.4.5  # For environment variable management
+django-filter>=22.1  # If you're using filters in Django REST framework
+celery>=5.2,<6.0  # If you're using Celery for background tasks
+redis>=4.0  # If you're using Redis for Celery or caching
+django-extensions>=3.1  # For additional management commands
+python-dotenv>=0.19  # If you're using .env files for settings

@@ -27,6 +27,7 @@ decimal_field = openapi.Schema(type=openapi.TYPE_NUMBER, format=openapi.FORMAT_F
     request_body=openapi.Schema(
         type=openapi.TYPE_OBJECT,
         properties={
+            'liquidity_provider_id': decimal_field,
             'total_funds': decimal_field,
             'npl': decimal_field,
             'average_age_borrower': decimal_field,
@@ -44,11 +45,14 @@ decimal_field = openapi.Schema(type=openapi.TYPE_NUMBER, format=openapi.FORMAT_F
     ),
     responses={201: openapi.Response("Success", FinancialMetricsSerializer)}
 )
+
+
 @api_view(['POST'])
 def create_financial_metrics(request):
     """
     API to insert data into FinancialMetrics model.
     """
+    print(request.data)
     serializer = FinancialMetricsSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()

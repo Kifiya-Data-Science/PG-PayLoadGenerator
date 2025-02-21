@@ -8,7 +8,8 @@ from rest_framework import permissions
 
 
 urlpatterns = [
-    path('', views.landing, name='landing'),
-    path('read/', views.api_apliq),
-    path('write/', views.create_financial_metrics, name='insert_financial_metrics'),
+    # path('', views.landing, name='landing'),
+    # path('read/', views.api_apliq),
+    # path('write/', views.create_financial_metrics, name='insert_financial_metrics'),
+    path('servedummy/', views.serve_json, name='serve_json')
     ]

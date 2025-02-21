@@ -1,0 +1,44 @@
+{
+    "dashboard": {
+      "program_name": "Youth Business Support Program",
+      "product_name": "Small Business Loan",
+      "guarantee_amount": 5000.00,
+      "guarantee_currency": "USD",
+      "guarantee_date": "2024-12-01",
+      "pfi_name": "XYZ Bank",
+      "loan_amount": 10000.00,
+      "loan_currency": "USD",
+      "loan_date": "2024-06-15",
+      "loan_description": "Loan for business expansion",
+      "borrower_name": "John Doe",
+      "borrower_phone_number": "+1234567890",
+      "borrower_gender": "Male",
+      "borrower_country": "USA",
+      "recovered_amount": 3000.00,
+      "recovery_date": "2025-02-20"
+    },
+    "liquidity": {
+      "liquidity_provider_id": 11.0,
+      "total_funds": 1000000.0,
+      "npl": 100000.0,
+      "number_of_customers": 5000,
+      "total_banks": 10,
+      "average_age_borrower": 35.5,
+      "active_guarantees": 25,
+      "total_injected_liquidity": 5000000.0,
+      "available_liquidity": 3000000.0,
+      "liquidity_utilization_rate": 60.0,
+      "monthly_liquidity_injections": 100000.0,
+      "total_loans_disbursed": 15000000.0,
+      "fund_allocation_per_organization": 250000.0,
+      "guarantee_utilization_rate": 40.0,
+      "outstanding_loan_guarantees": 2000000.0,
+      "loan_performance_metrics": 95.0,
+      "total_pending_liquidity_requests": 500000.0,
+      "total_disbursed_liquidity": 4500000.0
+    },
+    "guarantee": {},
+    "cpm": {},
+    "ews": {}
+  }
+  

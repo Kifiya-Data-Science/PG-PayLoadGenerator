@@ -15,6 +15,7 @@ class Migration(migrations.Migration):
             name='FinancialMetrics',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('liquidity_provider_id',models.DecimalField(blank=True, decimal_places=2, max_digits=20, null=True)),
                 ('total_funds', models.DecimalField(blank=True, decimal_places=2, max_digits=20, null=True)),
                 ('npl', models.DecimalField(blank=True, decimal_places=2, max_digits=10, null=True)),
                 ('number_of_customers', models.IntegerField(blank=True, null=True)),

@@ -7,6 +7,7 @@ from rest_framework import status
 from .serializers import FinancialMetricsSerializer
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
+from decimal import Decimal
 
 
 
@@ -52,7 +53,7 @@ def create_financial_metrics(request):
     """
     API to insert data into FinancialMetrics model.
     """
-    print(request.data)
+    # print(request.data)
     serializer = FinancialMetricsSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()

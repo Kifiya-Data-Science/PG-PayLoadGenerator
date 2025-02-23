@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'apliq',
     'rest_framework',
     'drf_yasg',
+    'corsheaders',  # Add this line
+
 
 
 ]
@@ -50,6 +52,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -155,3 +158,4 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.BrowsableAPIRenderer',  # Optional
     ],
 }
+CORS_ALLOW_ALL_ORIGINS = True  # Allow all origins

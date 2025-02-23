@@ -29,7 +29,6 @@ DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '3.93.68.14']
 
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -42,17 +41,14 @@ INSTALLED_APPS = [
     'apliq',
     'rest_framework',
     'drf_yasg',
-    'corsheaders',  # Add this line
-
-
-
+    'corsheaders',  # Added for CORS support
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # Place this at the top
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'corsheaders.middleware.CorsMiddleware',  # Make sure this is before CsrfViewMiddleware
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -64,7 +60,7 @@ ROOT_URLCONF = 'KifiyaDataStub.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # Add this line
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # Added templates directory
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -90,6 +86,7 @@ DATABASES = {
     }
 }
 
+# Uncomment this section to use PostgreSQL
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
@@ -100,7 +97,6 @@ DATABASES = {
 #         'PORT': '5432',
 #     }
 # }
-
 
 
 # Password validation
@@ -139,15 +135,17 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+# Django REST Framework Settings
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',  # Change this for authentication later
+        'rest_framework.permissions.AllowAny',  # Change this later for proper security
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.SessionAuthentication',
@@ -158,4 +156,15 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.BrowsableAPIRenderer',  # Optional
     ],
 }
-CORS_ALLOW_ALL_ORIGINS = True  # Allow all origins
+
+
+# CORS Configuration
+CORS_ALLOW_ALL_ORIGINS = False  # Better security than allowing all origins
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",     # Local React frontend
+    "http://3.93.68.14:3000",    # Deployed React frontend (if applicable)
+]
+
+# Allow sending credentials (cookies, auth headers) if needed
+CORS_ALLOW_CREDENTIALS = True

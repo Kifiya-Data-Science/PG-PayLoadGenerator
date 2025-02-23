@@ -159,12 +159,21 @@ REST_FRAMEWORK = {
 
 
 # CORS Configuration
-CORS_ALLOW_ALL_ORIGINS = False  # Better security than allowing all origins
+CORS_ALLOW_ALL_ORIGINS = True
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",     # Local React frontend
-    "http://3.93.68.14:3000",    # Deployed React frontend (if applicable)
+# Allow all headers and methods (optional but useful)
+CORS_ALLOW_HEADERS = [
+    '*',
 ]
 
-# Allow sending credentials (cookies, auth headers) if needed
-CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
+
+# If you need credentials like cookies or Authorization headers:
+CORS_ALLOW_CREDENTIALS = False
